@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operating Systems · Kumo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Assets/Css/dashboard.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="dashboard.html" aria-label="Kumo home"><span class="brand-cloud">☁</span><span>kumo</span></a>
+      <button class="new-cloud"><span>＋</span> New cloud</button>
+
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a class="nav-item active" href="#today"><span>◒</span> Today</a>
+        <a class="nav-item" href="#upcoming"><span>⌁</span> Upcoming</a>
+        <a class="nav-item" href="#archive"><span>▱</span> Archive</a>
+      </nav>
+
+      <div class="clouds-heading"><span>Your clouds</span><button aria-label="Add a cloud">＋</button></div>
+      <nav class="cloud-list" aria-label="Your clouds">
+        <a class="cloud-row selected" href="#operating-systems"><span class="cloud-icon blue">☁</span><span>Operating Systems</span><span class="cloud-count">4</span></a>
+        <a class="cloud-row" href="#design"><span class="cloud-icon peach">☁</span><span>Design studio</span></a>
+        <a class="cloud-row" href="#japan"><span class="cloud-icon lavender">☁</span><span>Japan 2026</span></a>
+        <a class="cloud-row" href="#garden"><span class="cloud-icon green">☁</span><span>Little garden</span></a>
+      </nav>
+
+      <div class="profile"><div class="avatar">JM</div><div><strong>Jules Morgan</strong><small>Personal space</small></div><button aria-label="Account menu">···</button></div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar"><div class="breadcrumb"><span>Clouds</span><i>/</i><strong>Operating Systems</strong></div><div class="top-actions"><button class="icon-button" aria-label="Search">⌕</button><button class="icon-button" aria-label="Notifications">♧</button><button class="share-button">Share <span>↗</span></button></div></header>
+
+      <section class="cloud-header" id="operating-systems">
+        <div class="cloud-title"><div class="large-cloud blue">☁</div><div><p class="eyebrow">CSE 341 · FALL 2026</p><h1>Operating Systems</h1><p class="subtitle">A home for lectures, assignments, and the ideas in between.</p></div></div>
+        <div class="week"><span class="week-dot"></span><span>Week 7</span><span class="muted">· Tuesday, October 13</span></div>
+      </section>
+
+      <section class="focus-grid">
+        <article class="welcome-card"><div><p class="card-kicker">GOOD MORNING, JULES</p><h2>A little room<br>to think clearly.</h2><p>Pick up where you left off, or make space for something new.</p><button class="soft-button" id="openNote">Write a note <span>→</span></button></div><div class="sun"></div><div class="cloud-art cloud-a">☁</div><div class="cloud-art cloud-b">☁</div></article>
+        <article class="due-card"><div class="card-heading"><div><p class="card-kicker">UP NEXT</p><h3>Due this week</h3></div><a href="#tasks">View all</a></div><div class="due-item"><span class="checkbox"></span><div><strong>Scheduler implementation</strong><small>Assignment 3 · Thu, Oct 15</small></div><span class="due-label urgent">2 days</span></div><div class="due-item"><span class="checkbox"></span><div><strong>Read: Virtual memory</strong><small>Lecture 14 · Fri, Oct 16</small></div><span class="due-label">3 days</span></div><div class="progress"><span style="width: 64%"></span></div><p class="progress-text"><strong>7 of 11</strong> tasks complete this week</p></article>
+      </section>
+
+      <section class="workspace-grid">
+        <div class="left-column">
+          <section class="panel notes-panel"><div class="section-title"><div><p class="card-kicker">NOTES</p><h2>Keep learning in one place</h2></div><button class="text-button" id="newNote">+ New note</button></div><div class="note-list"><article class="note-card"><span class="note-type">LECTURE 13</span><h3>Memory management &amp; paging</h3><p>Notes on address translation, page tables, and the cost of a page fault.</p><footer><span>Updated today</span><span>↗</span></footer></article><article class="note-card"><span class="note-type">LECTURE 12</span><h3>CPU scheduling</h3><p>Comparing round-robin, SJF, and multi-level feedback queues.</p><footer><span>Updated Oct 8</span><span>↗</span></footer></article></div></section>
+          <section class="panel task-panel" id="tasks"><div class="section-title"><div><p class="card-kicker">TASKS</p><h2>A gentle next step</h2></div><button class="text-button">Open tasks →</button></div><div class="task-row"><button class="check" aria-label="Complete task"></button><span>Sketch out scheduler data structures</span><span class="task-date">Today</span></div><div class="task-row"><button class="check" aria-label="Complete task"></button><span>Review lecture 13 notes</span><span class="task-date">Tomorrow</span></div></section>
+        </div>
+        <aside class="right-column"><section class="panel schedule-panel"><div class="section-title"><div><p class="card-kicker">SCHEDULE</p><h2>Coming up</h2></div><button class="calendar-button" aria-label="Open calendar">□</button></div><div class="event"><time><b>13</b><span>OCT</span></time><div><strong>Operating Systems lecture</strong><p>Today · 10:00 – 11:30</p></div><span class="event-mark blue-mark"></span></div><div class="event"><time><b>15</b><span>OCT</span></time><div><strong>Assignment 3 due</strong><p>Thursday · 23:59</p></div><span class="event-mark coral-mark"></span></div></section>
+          <section class="silver-lining"><div class="sparkle">✦</div><p class="card-kicker">SILVER LINING</p><h2>Ready when you are.</h2><p>I can turn your latest lecture notes into a study guide, quiz, or a simpler explanation.</p><button id="askAssistant">Ask a question <span>→</span></button></section>
+        </aside>
+      </section>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="noteModal" hidden><section class="note-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="close-modal" aria-label="Close">×</button><p class="card-kicker">OPERATING SYSTEMS</p><h2 id="modalTitle">A fresh page</h2><input aria-label="Note title" placeholder="Untitled note"><textarea aria-label="Note content" placeholder="Start writing…"></textarea><button class="save-note">Save note</button></section></div>
+  <script src="Assets/JS/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumo</title>
+    <link rel="stylesheet" href="Assets/Css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+
+<script src="Assets/JS/login.js"></script>
+
+<body>
+
+    <div class = "container">    
+
+        <div class = "left-panel">
+            <img
+                src="Assets/images/login-illustration.png"
+                alt="Kumo Illustration"
+                class="login-illustration">
+        </div>  
+
+        <div class = "right-panel">
+
+            <div class = "login-card">
+                <div class = "title">
+
+                    <h1>Welcome Back</h1>
+                    <p>Login to continue to your account.</p>
+
+                </div>
+                
+                <form class="login-form">
+
+    <div class="input-group">
+
+    <span class="material-symbols-outlined input-icon">
+        mail
+    </span>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="youremail@gmail.com"
+        required>
+
+</div>
+
+    <div class="input-group">
+
+    <span class="material-symbols-outlined input-icon">
+        lock
+    </span>
+
+    <input
+        type="password"
+        id="password"
+        placeholder="••••••••"
+        required>
+
+    <button
+        class="toggle-password"
+        type="button">
+
+        <span class="material-symbols-outlined">
+            visibility
+        </span>
+
+    </button>
+
+</div>
+
+    <div class="remember-row">
+
+        <label class="checkbox-container">
+            <input type="checkbox" name="remember">
+            <span class="checkmark"></span>
+            <span>Remember Me</span>
+        </label>
+
+        <a class="forgot-password" href="#">
+            Forgot Password?
+        </a>
+
+    </div>
+
+    <button class="login-btn" type="submit">
+        Login
+    </button>
+
+    <div class="divider">
+
+        <div class="line"></div>
+
+        <span>or</span>
+
+        <div class="line"></div>
+
+    </div>
+
+    <button class="google-btn" type="button">
+
+        <img src="Assets/icons/google.svg" alt="Google">
+
+        <span>Continue with Google</span>
+
+    </button>
+
+</form>
+
+
+
+                <div class = "footer">
+
+                    <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
+                
+                </div>
+
+                
+            </div>
+
+        </div>
+
+    </div>
+        
+</body>
+
+</html>
