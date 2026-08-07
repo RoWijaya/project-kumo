@@ -1,0 +1,512 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  background: url("../images/login-illustration.png") center 0% / 100% no-repeat
+    fixed;
+}
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  pointer-events: none;
+}
+
+/* ================= Layout ================= */
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  width: 40%;
+  height: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.right-panel {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px;
+}
+
+/* ================= Card ================= */
+
+.auth-card {
+  width: 520px;
+  min-height: 700px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 28px;
+
+  padding: 46px;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+
+  transition: 0.25s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* ================= Back Button ================= */
+
+.back-btn {
+  display: inline-flex;
+
+  width: fit-content;
+
+  margin-bottom: 28px;
+
+  text-decoration: none;
+
+  color: #222;
+}
+
+.back-btn .material-symbols-outlined {
+  font-size: 34px;
+}
+
+/* ================= Title ================= */
+
+.title {
+  margin-bottom: 40px;
+}
+
+.title h1 {
+  font-size: 54px;
+
+  font-weight: 700;
+
+  line-height: 1.05;
+
+  margin-bottom: 10px;
+}
+
+.title p {
+  font-size: 17px;
+
+  color: #666;
+}
+
+/* ================= Form ================= */
+
+.auth-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+/* ================= Input ================= */
+
+.input-group {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.input-group input {
+  width: 100%;
+
+  height: 58px;
+
+  padding-left: 54px;
+  padding-right: 54px;
+
+  border: 1px solid #cfded8;
+
+  border-radius: 12px;
+
+  font-size: 16px;
+
+  font-family: inherit;
+
+  transition: 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+
+  border-color: #88b6a5;
+
+  box-shadow: 0 0 0 3px rgba(136, 182, 165, 0.15);
+}
+
+.input-icon {
+  position: absolute;
+
+  left: 16px;
+
+  color: #88b6a5;
+
+  pointer-events: none;
+}
+
+.toggle-password {
+  position: absolute;
+
+  right: 16px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  background: none;
+
+  border: none;
+
+  color: #88b6a5;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.toggle-password:hover {
+  color: #679985;
+}
+
+/* ================= Remember ================= */
+
+.remember-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.checkbox-container {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.checkbox-container input {
+  display: none;
+}
+
+.checkmark {
+  width: 24px;
+  height: 24px;
+
+  border: 2px solid #88b6a5;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.2s;
+}
+
+.checkbox-container input:checked + .checkmark {
+  background: #88b6a5;
+}
+
+.checkbox-container input:checked + .checkmark::after {
+  content: "✓";
+
+  color: white;
+
+  font-size: 14px;
+}
+
+.forgot-password {
+  color: #88b6a5;
+
+  text-decoration: none;
+
+  font-size: 15px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* ================= Primary Button ================= */
+
+.primary-btn {
+  width: 100%;
+
+  height: 60px;
+
+  margin-top: 8px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #88b6a5;
+
+  color: white;
+
+  font-size: 20px;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.primary-btn:hover {
+  background: #77a493;
+
+  transform: translateY(-2px);
+}
+
+/* ================= Divider ================= */
+
+.divider {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin: 8px 0;
+}
+
+.line {
+  flex: 1;
+
+  height: 1px;
+
+  background: #d6eae6;
+}
+
+.divider span {
+  color: #999;
+}
+
+/* ================= Google Button ================= */
+
+.google-btn {
+  width: 100%;
+
+  height: 58px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  background: white;
+
+  border: 1px solid #d6eae6;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  font-size: 17px;
+
+  transition: 0.2s;
+}
+
+.google-btn:hover {
+  background: #f7f9f8;
+}
+
+.google-btn img {
+  width: 22px;
+}
+
+/* ================= Footer ================= */
+
+.footer {
+  margin-top: 30px;
+
+  text-align: center;
+
+  font-size: 15px;
+
+  color: #555;
+}
+
+.footer a {
+  color: #88b6a5;
+
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ================= Auth Icons ================= */
+
+.icon-circle {
+  width: 78px;
+  height: 78px;
+
+  margin: 0 auto 28px;
+
+  border-radius: 50%;
+
+  background: #edf5f2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  animation: popIn 0.6s ease;
+}
+
+.icon-circle .material-symbols-outlined {
+  font-size: 42px;
+
+  color: #88b6a5;
+}
+
+.icon-circle.success {
+  background: #eef5ee;
+}
+
+/* ================= Success Page ================= */
+
+.success-card {
+  text-align: center;
+}
+
+.success-text {
+  margin-top: 18px;
+
+  color: #666;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+.success-text p {
+  margin-bottom: 18px;
+}
+
+/* ================= Info Box ================= */
+
+.info-box {
+  margin-top: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: #f3f8f6;
+
+  color: #666;
+
+  font-size: 13px;
+}
+
+.info-box .material-symbols-outlined {
+  color: #88b6a5;
+
+  font-size: 20px;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+.kumo-btn {
+  position: fixed;
+
+  top: 38px;
+  left: 48px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  text-decoration: none;
+
+  color: #222;
+
+  padding: 10px 16px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.55);
+
+  backdrop-filter: blur(10px);
+
+  transition: 0.25s;
+
+  z-index: 100;
+}
+
+.kumo-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+
+  transform: translateY(-2px);
+}
+
+.kumo-btn img {
+  height: 34px;
+
+  width: auto;
+}

@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("../images/login-illustration.png") center 10% / cover no-repeat fixed;
+
+  animation: pageFade 0.8s ease;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* ---------- Top Buttons ---------- */
+
+.top-buttons {
+  position: fixed;
+
+  top: 40px;
+  right: 50px;
+
+  display: flex;
+  gap: 14px;
+
+  z-index: 100;
+
+  opacity: 0;
+  animation: fadeUp 0.8s forwards;
+  animation-delay: 0.1s;
+}
+
+.top-buttons a {
+  width: 120px;
+  height: 46px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-decoration: none;
+
+  border-radius: 12px;
+
+  background: #88b6a5;
+
+  color: white;
+
+  font-size: 22px;
+  font-weight: 300;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.top-buttons a:hover {
+  transform: translateY(-4px);
+
+  background: #77a392;
+
+  box-shadow: 0 10px 30px rgba(136, 182, 165, 0.35);
+}
+
+.top-buttons a:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Logo ---------- */
+
+.logo {
+  opacity: 0;
+  animation:
+    fadeUp 0.8s forwards,
+    float 6s ease-in-out infinite;
+  animation-delay: 0.2s, 1s;
+}
+
+.logo img {
+  width: 280px;
+  margin-bottom: 18px;
+}
+
+/* ---------- Tagline ---------- */
+
+.tagline {
+  color: white;
+
+  font-size: 28px;
+  font-weight: 300;
+
+  margin-bottom: 60px;
+
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  animation: fadeUp 0.8s forwards;
+  animation-delay: 0.45s;
+}
+
+/* ---------- Description ---------- */
+
+.description {
+  max-width: 720px;
+
+  color: rgba(255, 255, 255, 0.95);
+
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 2.1;
+
+  text-align: center;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+  opacity: 0;
+  animation: fadeUp 0.8s forwards;
+  animation-delay: 0.7s;
+}
+
+/* ---------- Button ---------- */
+
+.get-started-btn {
+  margin-top: 60px;
+
+  width: 230px;
+  height: 62px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+
+  background: #88b6a5;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 28px;
+  font-weight: 300;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  opacity: 0;
+  animation: fadeUp 0.8s forwards;
+  animation-delay: 1s;
+}
+
+.get-started-btn:hover {
+  background: #77a392;
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 30px rgba(136, 182, 165, 0.35);
+}
+
+.get-started-btn:active {
+  transform: scale(0.97);
+}
+
+/* ---------- Animations ---------- */
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
