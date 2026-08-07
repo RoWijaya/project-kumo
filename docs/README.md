@@ -6,7 +6,7 @@ Instead of organizing information into separate notes and reminders, each Cloud 
 
 Current Progress:
 - ✅ Login Page
-- ⏳ Register Page
+- ✅ Register Page
 - ⏳ Dashboard
 - ⏳ Cloud Workspace
 - ⏳ AI Assistant (Silver Lining)
