@@ -1,1 +1,8 @@
+assets/backend/db.php
+
+*.log
+
 .vscode/
+
+.DS_Store
+Thumbs.db

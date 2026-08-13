@@ -1,24 +1,57 @@
 # ☁️ Project Kumo
 
-Kumo is where I keep everything that would normally end up scattered across five different apps.
+Kumo is a personal workspace designed to keep everything that would normally end up scattered across different apps in one place.
 
-Instead of organizing information into separate notes and reminders, each Cloud contains everything related to one part of your life.
+Instead of separating notes, reminders, tasks, projects, expenses, and other information into different applications, Kumo organizes them into **Clouds**.
 
-Built because I wanted a place for notes, classes, reminders, and ideas.
+Each Cloud represents a part of your life and can be customized to fit how you want to organize it.
 
-Current Progress:
-- ✅ Login Page
-- ✅ Register Page
-- ⏳ Dashboard
+> Your life changes. Your workspace should be able to change with it.
+
+## Current Progress
+
+- ✅ Landing Page
+- ✅ Authentication UI
+- ✅ User Registration
+- ✅ User Login
+- ✅ PHP Session Authentication
+- ✅ MySQL Database
+- ✅ Main Dashboard
+- ✅ Customizable Clouds Prototype
 - ⏳ Cloud Workspace
-- ⏳ AI Assistant (Silver Lining)
+- ⏳ Notes & Content System
+- ⏳ Reminders & Tasks
+- ⏳ User Data Persistence
+- ⏳ Shared Notes & Class Collaboration
+- ⏳ AI Assistant — Silver Lining
 
-## Built With
+## Core Concept
 
-- HTML5
-- CSS3
-- JavaScript
+### ☁️ Clouds
 
-## Status
+Clouds are Kumo's main organizational system.
 
-Currently in development.
+Users can create, remove, rename, and customize their own Clouds depending on what they need.
+
+For example:
+
+```text
+Your Sky
+│
+├── ☁️ Education
+│   ├── Programming
+│   ├── Calculus
+│   └── Other Classes
+│
+├── ☁️ Personal
+│   ├── Notes
+│   └── Reminders
+│
+├── ☁️ Projects
+│   ├── Kumo
+│   └── Other Projects
+│
+└── ☁️ Expenses
+    ├── Monthly Expenses
+    └── Budget
+```

@@ -57,3 +57,76 @@ Completed the initial frontend prototype, including:
 - Forgot Password
 - Reset Link Sent
 - Shared authentication design system
+
+---
+
+## 2026-08-07
+
+**v0.1.1**
+
+### Main Dashboard
+
+- Designed and implemented the first Kumo dashboard prototype.
+- Created the main dashboard layout and sidebar navigation.
+- Added expandable cloud categories.
+- Added support for creating new clouds.
+- Added functionality for removing clouds.
+- Added functionality for renaming clouds.
+- Designed the initial cloud creation interface.
+- Added empty dashboard states for new users.
+- Designed the dashboard around the concept of users arranging their own "sky".
+- Added responsive considerations for future mobile support.
+
+### Kumo Organization Concept
+
+- Defined clouds as the primary organizational system within Kumo.
+- Established the concept of clouds containing different categories of information.
+- Explored using Personal, Education, Projects, and Expenses as different cloud types.
+- Designed semesters as sub-clouds within Education.
+- Designed classes as categories within semesters.
+- Planned for notes, reminders, and other content to exist inside classes.
+- Planned Expenses as a dedicated cloud for tracking monthly expenses.
+- Established the idea that Kumo should remain useful beyond university and adapt to work and personal life.
+
+### Backend & Database
+
+- Set up XAMPP for local PHP development.
+- Configured Apache and MySQL/MariaDB.
+- Created the initial MySQL database.
+- Created the `userdata` table for user accounts.
+- Created the PHP database connection.
+- Connected the frontend registration form to PHP.
+- Implemented server-side account registration.
+- Added password hashing using `password_hash()`.
+- Added duplicate email checking.
+- Connected the login form to PHP.
+- Implemented password verification using `password_verify()`.
+- Implemented PHP sessions for authenticated users.
+- Added session-based authentication protection through `auth.php`.
+- Implemented logout functionality.
+- Connected successful authentication to the main dashboard.
+- Tested the complete local registration and login flow.
+
+### Authentication Flow
+
+The initial authentication flow is now:
+
+```text
+Register
+   ↓
+register.php
+   ↓
+MySQL
+   ↓
+userdata
+   ↓
+Login
+   ↓
+login.php
+   ↓
+password verification
+   ↓
+PHP session
+   ↓
+Kumo Dashboard
+```
