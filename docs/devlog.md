@@ -50,6 +50,7 @@
 **v0.1.0**
 
 Completed the initial frontend prototype, including:
+
 - Landing page
 - Login
 - Register
