@@ -131,7 +131,9 @@ PHP session
 Kumo Dashboard
 ```
 
-2026-08-29
+### 2026-08-29
+
+**v0.1.2**
 
 ### Authentication System Enhancements
 
