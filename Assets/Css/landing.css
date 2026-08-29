@@ -15,8 +15,6 @@ body {
   animation: pageFade 0.8s ease;
 }
 
-/* ---------- Hero ---------- */
-
 .hero {
   width: 100%;
   max-width: 900px;
@@ -33,8 +31,6 @@ body {
 
   text-align: center;
 }
-
-/* ---------- Top Buttons ---------- */
 
 .top-buttons {
   position: fixed;
@@ -89,8 +85,6 @@ body {
   transform: scale(0.97);
 }
 
-/* ---------- Logo ---------- */
-
 .logo {
   opacity: 0;
   animation:
@@ -103,8 +97,6 @@ body {
   width: 280px;
   margin-bottom: 18px;
 }
-
-/* ---------- Tagline ---------- */
 
 .tagline {
   color: white;
@@ -120,8 +112,6 @@ body {
   animation: fadeUp 0.8s forwards;
   animation-delay: 0.45s;
 }
-
-/* ---------- Description ---------- */
 
 .description {
   max-width: 720px;
@@ -140,8 +130,6 @@ body {
   animation: fadeUp 0.8s forwards;
   animation-delay: 0.7s;
 }
-
-/* ---------- Button ---------- */
 
 .get-started-btn {
   margin-top: 60px;
@@ -185,8 +173,6 @@ body {
 .get-started-btn:active {
   transform: scale(0.97);
 }
-
-/* ---------- Animations ---------- */
 
 @keyframes pageFade {
   from {

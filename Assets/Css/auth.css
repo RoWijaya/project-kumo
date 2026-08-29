@@ -22,8 +22,6 @@ body::before {
   pointer-events: none;
 }
 
-/* ================= Layout ================= */
-
 .container {
   display: flex;
   height: 100vh;
@@ -47,8 +45,6 @@ body::before {
 
   padding: 60px;
 }
-
-/* ================= Card ================= */
 
 .auth-card {
   width: 520px;
@@ -77,8 +73,6 @@ body::before {
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.1);
 }
 
-/* ================= Back Button ================= */
-
 .back-btn {
   display: inline-flex;
 
@@ -94,8 +88,6 @@ body::before {
 .back-btn .material-symbols-outlined {
   font-size: 34px;
 }
-
-/* ================= Title ================= */
 
 .title {
   margin-bottom: 40px;
@@ -117,8 +109,6 @@ body::before {
   color: #666;
 }
 
-/* ================= Form ================= */
-
 .auth-form {
   display: flex;
 
@@ -126,8 +116,6 @@ body::before {
 
   gap: 22px;
 }
-
-/* ================= Input ================= */
 
 .input-group {
   position: relative;
@@ -199,8 +187,6 @@ body::before {
   color: #679985;
 }
 
-/* ================= Remember ================= */
-
 .remember-row {
   display: flex;
 
@@ -265,8 +251,6 @@ body::before {
   text-decoration: underline;
 }
 
-/* ================= Primary Button ================= */
-
 .primary-btn {
   width: 100%;
 
@@ -297,8 +281,6 @@ body::before {
   transform: translateY(-2px);
 }
 
-/* ================= Divider ================= */
-
 .divider {
   display: flex;
 
@@ -320,8 +302,6 @@ body::before {
 .divider span {
   color: #999;
 }
-
-/* ================= Google Button ================= */
 
 .google-btn {
   width: 100%;
@@ -358,8 +338,6 @@ body::before {
   width: 22px;
 }
 
-/* ================= Footer ================= */
-
 .footer {
   margin-top: 30px;
 
@@ -379,8 +357,6 @@ body::before {
 .footer a:hover {
   text-decoration: underline;
 }
-
-/* ================= Auth Icons ================= */
 
 .icon-circle {
   width: 78px;
@@ -409,8 +385,6 @@ body::before {
   background: #eef5ee;
 }
 
-/* ================= Success Page ================= */
-
 .success-card {
   text-align: center;
 }
@@ -428,8 +402,6 @@ body::before {
 .success-text p {
   margin-bottom: 18px;
 }
-
-/* ================= Info Box ================= */
 
 .info-box {
   margin-top: auto;
@@ -509,4 +481,43 @@ body::before {
   height: 34px;
 
   width: auto;
+}
+
+.alert-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  animation: slideDownFade 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.alert-error {
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.08);
+}
+
+.alert-icon {
+  font-size: 1.25rem;
+  color: #ef4444;
+}
+
+.alert-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@keyframes slideDownFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -130,3 +130,19 @@ PHP session
    ↓
 Kumo Dashboard
 ```
+
+2026-08-29
+
+### Authentication System Enhancements
+
+- Fixed backend validation logic in register.php to accurately enforce constraints and redirect errors.
+- Fixed login logic for improved stability and secure authentication routing.
+- Implemented frontend URL parameter parsing to bridge PHP server errors with the HTML UI.
+- Added a dynamic password requirement box to explicitly guide users on complexity rules during account creation.
+
+### UI/UX & Frontend Updates
+
+- Overhauled and redesigned elements of the UI to strictly adhere to Kumo's soft, minimalist, and airy design language.
+- Replaced plain text validation errors with animated, dynamically injected alert boxes for a smoother user experience.
+- Refactored dashboard column layouts using CSS Grid (minmax) to ensure perfect 50/50 structural symmetry regardless of content size.
+- Implemented the foundation for interactive, multi-step modals with sliding transitions (e.g., the onboarding flow and contextual popovers).

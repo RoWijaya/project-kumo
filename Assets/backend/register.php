@@ -35,10 +35,26 @@ if ($checkStmt->num_rows > 0) {
 
 $checkStmt->close();
 
+$length = strlen($password);
+if ($length < 8 || $length > 20) {
+    header("Location: ../../auth/register.html?error=password_length");
+    exit();
+}
+
+if (!preg_match('/[A-Z]/', $password) ||
+    !preg_match('/[a-z]/', $password) ||
+    !preg_match('/[0-9]/', $password) ||
+    !preg_match('/[\W_]/', $password)
+) {
+    header("Location: ../../auth/register.html?error=password_complexity");
+    exit();
+}   
+
 $hashedPassword = password_hash(
     $password,
     PASSWORD_DEFAULT
 );
+
 
 $stmt = $conn->prepare(
     "INSERT INTO userdata (username, email, password)
