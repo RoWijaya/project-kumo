@@ -1648,3 +1648,166 @@ details[open] .cloud-arrow {
     padding: 26px 20px 22px;
   }
 }
+
+.tour-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(38, 50, 41, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.tour-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* The element currently being highlighted */
+.tour-highlight {
+  position: relative !important;
+  z-index: 9001 !important;
+  transform: scale(1.05);
+  box-shadow:
+    0 0 0 6px rgba(255, 255, 255, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.15) !important;
+  background: #fff !important; /* Ensures the button pops against the dark overlay */
+  border-radius: var(--radius-sm);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none; /* Prevents them from clicking it during the tour */
+}
+
+/* The friendly message card */
+.tour-tooltip {
+  position: fixed;
+  z-index: 9002;
+  background: #fff;
+  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 340px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tour-tooltip.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tour-tooltip h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.tour-tooltip p {
+  margin: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.tour-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tour-actions .skip-btn {
+  font-size: 13px;
+  color: var(--text-faint);
+  font-weight: 500;
+}
+.tour-actions .skip-btn:hover {
+  color: var(--text-dark);
+}
+
+.onboarding-step {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-input {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  margin: 24px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  background-color: #fafafa;
+  transition: all 0.2s ease;
+}
+
+.modal-input:focus {
+  outline: none;
+  border-color: #6b8c7a;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(107, 140, 122, 0.15);
+}
+
+.onboarding-step .modal-input {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  display: block;
+}
+
+textarea.modal-input {
+  min-height: 110px;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+  background-color: #fafafa;
+}
+
+textarea.modal-input:focus {
+  border-color: #6b8c7a;
+  background-color: #ffffff;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 24px;
+  width: 100%;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
+.main {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+}

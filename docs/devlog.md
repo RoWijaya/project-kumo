@@ -148,3 +148,4 @@ Kumo Dashboard
 - Replaced plain text validation errors with animated, dynamically injected alert boxes for a smoother user experience.
 - Refactored dashboard column layouts using CSS Grid (minmax) to ensure perfect 50/50 structural symmetry regardless of content size.
 - Implemented the foundation for interactive, multi-step modals with sliding transitions (e.g., the onboarding flow and contextual popovers).
+- Landing page re-design.

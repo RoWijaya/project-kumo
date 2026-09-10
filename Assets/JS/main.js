@@ -1,3 +1,19 @@
+function goToStep(currentStepId, nextStepId) {
+  const currentStep = document.getElementById(currentStepId);
+  const nextStep = document.getElementById(nextStepId);
+
+  if (currentStep && nextStep) {
+    currentStep.style.display = "none";
+    nextStep.style.display = "block";
+  } else {
+    console.error(
+      "Error: Could not find one of these IDs in your HTML:",
+      currentStepId,
+      nextStepId,
+    );
+  }
+}
+
 (function () {
   "use strict";
 
@@ -13,7 +29,6 @@
     document.body.style.overflow = "";
   }
 
-  // Click-outside and Escape close any .modal-overlay currently active.
   document.addEventListener("click", function (e) {
     if (e.target.classList && e.target.classList.contains("modal-overlay")) {
       closeModal(e.target);
@@ -45,7 +60,6 @@
     { id: "work", label: "Work", emoji: "💼" },
   ];
 
-  // Which step names follow the life-stage pick, per stage.
   const FLOW = {
     university: ["semester", "classes"],
     highschool: ["grade", "subjects"],
@@ -56,7 +70,7 @@
 
   let ob = {
     stage: null,
-    path: [], // ["life-stage", ...FLOW[stage], "complete"]
+    path: [],
     index: 0,
     answers: { semester: "", grade: "", role: "", list: [""] },
   };
@@ -524,57 +538,237 @@
     "Drag and drop your Clouds to reorganize your workspace.",
   );
 
-  // Function to move forward a step
-  function goToStep(currentStepId, nextStepId) {
-    const currentStep = document.getElementById(currentStepId);
-    const nextStep = document.getElementById(nextStepId);
-
-    if (currentStep && nextStep) {
-      // Optional: Add a fade-out class here if you want CSS animations
-      currentStep.style.display = "none";
-
-      // Show the next step
-      nextStep.style.display = "block";
-      // Optional: Add a fade-in class here
-    }
-  }
-
-  // Function to move backward
   function goBack(currentStepId, previousStepId) {
     document.getElementById(currentStepId).style.display = "none";
     document.getElementById(previousStepId).style.display = "block";
   }
 
-  // Event Listeners for the main options
   document.addEventListener("DOMContentLoaded", () => {
-    // When they click "University"
     const btnUniversity = document.getElementById("btn-university");
     if (btnUniversity) {
       btnUniversity.addEventListener("click", () => {
         goToStep("step-1", "step-2-uni");
-        updateProgressBars(2); // Assuming you have a function to light up the top bars
+        updateProgressBars(2);
       });
     }
 
-    // When they click "Customize on my own" (Skip)
     const btnSkip = document.getElementById("btn-skip");
     if (btnSkip) {
       btnSkip.addEventListener("click", () => {
-        closeModal(); // Call your function that hides the whole modal overlay
+        closeModal();
       });
     }
   });
-
-  // Final Setup Button
-  function finishSetup() {
-    // Here is where you would eventually send the data to MySQL via AJAX/Fetch
-    const semester = document.getElementById("uni-semester").value;
-    const classes = document.getElementById("uni-classes").value;
-
-    console.log("Setting up Kumo for:", semester, classes);
-
-    // Go to success screen
-    goToStep("step-3-uni", "step-success");
-    updateProgressBars(4);
-  }
 })();
+
+class KumoTour {
+  constructor() {
+    this.currentStep = 0;
+    this.steps = [
+      {
+        target: null,
+        title: "Hi there! 👋",
+        text: "Welcome to Kumo. Before we set up your first Clouds, let me quickly show you around your new peaceful workspace.",
+        buttonText: "Show me around",
+      },
+      {
+        target: "#create-cloud-sidebar",
+        title: "Create your spaces",
+        text: "This is where you'll build your Sky. You can create Clouds for your classes, projects, or personal life right here.",
+        buttonText: "Next",
+        position: "right",
+      },
+      {
+        target: ".arrange",
+        title: "Tidy up anytime",
+        text: "Whenever your Sky gets a little crowded, use this to organize, archive, and arrange your layout perfectly.",
+        buttonText: "Got it, let's start!",
+      },
+    ];
+    this.init();
+  }
+
+  init() {
+    this.overlay = document.createElement("div");
+    this.overlay.className = "tour-overlay";
+    document.body.appendChild(this.overlay);
+
+    this.tooltip = document.createElement("div");
+    this.tooltip.className = "tour-tooltip";
+    this.tooltip.innerHTML = `
+      <h3 id="tour-title"></h3>
+      <p id="tour-text"></p>
+      <div class="tour-actions">
+        <button class="skip-btn" id="tour-skip">Skip tour</button>
+        <button class="primary-button" id="tour-next" style="width: auto; padding: 10px 20px;"></button>
+      </div>
+    `;
+    document.body.appendChild(this.tooltip);
+
+    document
+      .getElementById("tour-next")
+      .addEventListener("click", () => this.nextStep());
+    document
+      .getElementById("tour-skip")
+      .addEventListener("click", () => this.endTour());
+  }
+
+  start() {
+    this.overlay.classList.add("active");
+    this.showStep();
+  }
+
+  showStep() {
+    const step = this.steps[this.currentStep];
+
+    document
+      .querySelectorAll(".tour-highlight")
+      .forEach((el) => el.classList.remove("tour-highlight"));
+
+    document.getElementById("tour-title").textContent = step.title;
+    document.getElementById("tour-text").textContent = step.text;
+    document.getElementById("tour-next").textContent = step.buttonText;
+
+    if (step.target) {
+      const targetEl = document.querySelector(step.target);
+      if (targetEl) {
+        targetEl.classList.add("tour-highlight");
+
+        const rect = targetEl.getBoundingClientRect();
+        let leftPosition = rect.left;
+
+        if (step.position === "right") {
+          this.tooltip.style.top = `${rect.top}px`;
+          leftPosition = rect.right + 20;
+        } else {
+          this.tooltip.style.top = `${rect.bottom + 20}px`;
+        }
+
+        if (leftPosition + 360 > window.innerWidth) {
+          leftPosition = window.innerWidth - 360;
+        }
+
+        this.tooltip.style.left = `${leftPosition}px`;
+        this.tooltip.style.transform = `translateY(0)`;
+      }
+    } else {
+      this.tooltip.style.top = "50%";
+      this.tooltip.style.left = "50%";
+      this.tooltip.style.transform = "translate(-50%, -50%)";
+    }
+
+    this.tooltip.classList.add("active");
+  }
+
+  nextStep() {
+    this.currentStep++;
+    if (this.currentStep >= this.steps.length) {
+      this.endTour();
+    } else {
+      this.showStep();
+    }
+  }
+
+  endTour() {
+    this.overlay.classList.remove("active");
+    this.tooltip.classList.remove("active");
+    document
+      .querySelectorAll(".tour-highlight")
+      .forEach((el) => el.classList.remove("tour-highlight"));
+
+    setTimeout(() => {
+      const onboardingModal = document.getElementById("onboarding-modal");
+      if (onboardingModal) {
+        onboardingModal.style.display = "flex";
+
+        setTimeout(() => onboardingModal.classList.add("active"), 10);
+      }
+    }, 300);
+  }
+}
+
+async function finishSetup() {
+  const semesterInput = document.getElementById("uni-semester").value.trim();
+  const classesRaw = document.getElementById("uni-classes").value.trim();
+  if (!semesterInput || !classesRaw) {
+    alert("Please fill in your semester and classes.");
+    return;
+  }
+  sendSetupData(semesterInput, classesRaw);
+}
+
+async function finishSetupHS() {
+  const gradeInput = document.getElementById("hs-grade").value.trim();
+  const classesRaw = document.getElementById("hs-classes").value.trim();
+  if (!gradeInput || !classesRaw) {
+    alert("Please fill in your grade and subjects.");
+    return;
+  }
+  sendSetupData(gradeInput, classesRaw);
+}
+
+async function finishSetupMS() {
+  const gradeInput = document.getElementById("ms-grade").value.trim();
+  const classesRaw = document.getElementById("ms-classes").value.trim();
+  if (!gradeInput || !classesRaw) {
+    alert("Please fill in your grade and subjects.");
+    return;
+  }
+  sendSetupData(gradeInput, classesRaw);
+}
+
+async function finishSetupElem() {
+  const gradeInput = document.getElementById("elem-grade").value.trim();
+  const classesRaw = document.getElementById("elem-classes").value.trim();
+  if (!gradeInput || !classesRaw) {
+    alert("Please fill in your grade and subjects.");
+    return;
+  }
+  sendSetupData(gradeInput, classesRaw);
+}
+
+async function finishSetupWork() {
+  const titleInput = document.getElementById("work-title").value.trim();
+  const projectsRaw = document.getElementById("work-projects").value.trim();
+  if (!titleInput || !projectsRaw) {
+    alert("Please fill in your title and projects.");
+    return;
+  }
+  sendSetupData(titleInput, projectsRaw);
+}
+
+async function sendSetupData(mainCategory, subItemsRaw) {
+  const subItemsArray = subItemsRaw
+    .split(",")
+    .map((item) => item.trim())
+    .filter((item) => item !== "");
+
+  const payload = {
+    stage: "university",
+    semester: mainCategory,
+    classes: subItemsArray,
+  };
+
+  try {
+    const response = await fetch("../Assets/backend/setup_sky.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      const currentStep =
+        document.querySelector('.onboarding-step[style*="display: flex"]') ||
+        document.querySelector('.onboarding-step[style*="display: block"]');
+      if (currentStep) currentStep.style.display = "none";
+
+      document.getElementById("step-success").style.display = "flex";
+    } else {
+      console.error("Server Error:", result.error);
+    }
+  } catch (error) {
+    console.error("Network Error:", error);
+  }
+}
