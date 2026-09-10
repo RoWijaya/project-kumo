@@ -18,8 +18,8 @@ Each Cloud represents a part of your life and can be customized to fit how you w
 - ✅ MySQL Database
 - ✅ Main Dashboard
 - ✅ Customizable Clouds Prototype
-- ⏳ Cloud Workspace
-- ⏳ Notes & Content System
+- ✅ Cloud Workspace
+- ✅ Notes & Content System
 - ⏳ Reminders & Tasks
 - ⏳ User Data Persistence
 - ⏳ Shared Notes & Class Collaboration

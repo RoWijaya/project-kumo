@@ -149,3 +149,29 @@ Kumo Dashboard
 - Refactored dashboard column layouts using CSS Grid (minmax) to ensure perfect 50/50 structural symmetry regardless of content size.
 - Implemented the foundation for interactive, multi-step modals with sliding transitions (e.g., the onboarding flow and contextual popovers).
 - Landing page re-design.
+
+### 2026-09-10
+
+**v0.1.3**
+
+### Week & Task Management
+
+- Implemented an automated class schedule system to generate deeply nested folders for semesters (Weeks 1-16, Midterms, and Finals).
+- Built and integrated the backend tasks database table.
+- Added task management functionality within the dashboard allowing users to add tasks, set due dates, and toggle completion statuses natively.
+- Fixed MySQL recursive fetching behavior by sorting clouds via ORDER BY id ASC to maintain proper chronological order during bulk folder generation.
+
+### Rich-Text Note System
+
+- Created a dedicated, distraction-free writing environment (note_editor.php).
+- Integrated Quill.js (v1.3.6) as the core rich-text editor engine.
+- Implemented quill-image-resize-module for native, draggable image scaling within notes.
+- Added multi-font support mapped to Kumo's aesthetic (Poppins, Lora, Roboto Mono).
+- Built robust backend logic (save_note.php) to seamlessly check for existing notes, updating or inserting them smoothly without creating duplicate database rows.
+- Updated the notes database table to track and display the last_updated timestamp in the editor UI.
+
+### UI/UX & Code Refactoring
+
+- Built a custom localStorage script for the sidebar to persist folder expansion states, decoupling the UI from page reloads.
+- Refined the dashboard interface by adding a compact, elegantly styled "Distraction-Free Notebook" entry card.
+- Extracted heavy editor CSS into a dedicated editor.css file to maintain clean architecture and modularity.
