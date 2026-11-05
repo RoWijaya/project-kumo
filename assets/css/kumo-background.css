@@ -1,0 +1,66 @@
+/* Shared account-page backdrop. The split panel and theme are owned by auth.css. */
+html {
+  min-height: 100%;
+  background: var(--auth-page, #edf2ee);
+}
+
+body {
+  margin: 0;
+  background: var(--auth-page, #edf2ee);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Parallax Atmospheric Depth Layers for Auth Pages */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+  will-change: transform, opacity;
+}
+
+body::before {
+  top: -100px;
+  left: -80px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(130, 165, 139, 0.16) 0%, rgba(237, 242, 238, 0) 70%);
+}
+
+body::after {
+  bottom: -120px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(115, 157, 128, 0.14) 0%, rgba(237, 242, 238, 0) 70%);
+}
+
+html[data-theme="dark"] body::before {
+  background: radial-gradient(circle, rgba(74, 115, 96, 0.15) 0%, rgba(27, 42, 38, 0) 70%);
+}
+
+html[data-theme="dark"] body::after {
+  background: radial-gradient(circle, rgba(58, 95, 79, 0.12) 0%, rgba(27, 42, 38, 0) 70%);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+.kumo-btn,
+.auth-nav {
+  z-index: 10;
+}
+
+.auth-story-notes>div {
+  will-change: transform;
+}
+
+.auth-card {
+  will-change: transform;
+}

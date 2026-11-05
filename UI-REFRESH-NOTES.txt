@@ -1,0 +1,11 @@
+KUMO UI REFRESH — SOURCE NOTES
+
+This full source archive is based on the project supplied as Kumo(4).zip and includes the
+UI refresh. It also retains the original assets/backend/db.php from the supplied source,
+which is configured for local XAMPP (localhost/root/users). Do NOT upload that db.php over
+your live InfinityFree version. For the live site, use Kumo-UI-Refresh-Patch.zip and leave
+assets/backend/db.php and storage/kumo_app.key untouched.
+
+The landing/auth background is implemented in assets/css/kumo-background.css and is fixed
+to the viewport rather than document height. The background itself is deliberately static;
+other UI entry and hover animations are retained.

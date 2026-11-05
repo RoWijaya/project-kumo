@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="../assets/JS/theme.js?v=20261029-v3"></script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/kumo_fluffy_cloud_icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=block" />
+    <script src="../assets/JS/csrf-forms.js?v=20261029-v3" defer></script>
+    <title>Kumo - Register</title>
+
+    
+    
+    
+    <link rel="stylesheet" href="../assets/css/auth.css?v=20261029-v4" />
+    <link rel="stylesheet" href="../assets/css/kumo-background.css?v=20261029-v3" />
+
+
+    
+  </head>
+
+  <body>
+    <a href="../index.html" class="kumo-btn" aria-label="Back to Kumo home">
+      <img src="../assets/icons/Kumo.svg" alt="Kumo" />
+    </a>
+
+    <nav class="auth-nav" aria-label="Account navigation">
+      <a href="register.html" class="auth-nav-pill" aria-current="page">Sign Up</a>
+      <a href="login.html" class="auth-nav-link">Login</a>
+    </nav>
+
+    <div class="container">
+      <div class="left-panel"><div class="auth-story"><p class="auth-story-kicker">Start with a little cloud</p><h2>Make a little room for what’s next.</h2><p>Bring your course notes, deadlines, and to-dos together. No need to have it all figured out yet.</p><div class="auth-story-notes"><div><strong>One calm space</strong><span>Notes, tasks, and ideas.</span></div><div><strong>At your own pace</strong><span>One small step at a time.</span></div></div><p class="auth-story-quote">“A little structure. More room to think.”</p></div></div>
+
+      <div class="right-panel">
+        <div class="auth-card">
+          <a href="../index.html" class="brand" aria-label="Kumo home"><img src="../assets/icons/Kumo.svg" alt="Kumo" /></a>
+<div class="title">
+            <h1>Create your account.</h1>
+            <p>Bring your notes, tasks, and plans together in one calm space.</p>
+          </div>
+
+          <div
+            id="error-message"
+            class="alert-box alert-error"
+            style="display: none"
+          >
+            <span class="material-symbols-outlined alert-icon">error</span>
+            <span id="error-text" class="alert-text"></span>
+          </div>
+
+          <form
+            class="auth-form"
+            action="../assets/backend/register.php"
+            method="POST"
+          >
+            <label class="input-label" for="fullname">Full name</label>
+            <div class="input-group" data-field-group="full_name">
+              <span class="material-symbols-outlined input-icon"> person </span>
+
+              <input
+                type="text"
+                id="fullname"
+                name="full_name"
+                aria-label="Full name"
+                maxlength="100"
+                autocomplete="name"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+
+            <label class="input-label" for="username">Username</label>
+            <div class="input-group" data-field-group="username">
+              <span class="material-symbols-outlined input-icon">alternate_email</span>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                aria-label="Username"
+                minlength="3"
+                maxlength="50"
+                pattern="[A-Za-z0-9._-]{3,50}"
+                autocomplete="username"
+                placeholder="Choose a username"
+                aria-describedby="username-hint"
+                required
+              />
+            </div>
+
+            <label class="input-label" for="email">Email address</label>
+            <div class="input-group" data-field-group="email">
+              <span class="material-symbols-outlined input-icon"> mail </span>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                aria-label="Email address"
+                maxlength="254"
+                autocomplete="email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <label class="input-label" for="password">Password</label>
+            <div class="input-group" data-field-group="password">
+              <span class="material-symbols-outlined input-icon"> lock </span>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                aria-label="Password"
+                minlength="8"
+                maxlength="20"
+                autocomplete="new-password"
+                placeholder="Password"
+                required
+              />
+
+              <button
+                class="toggle-password"
+                type="button"
+                data-target="password"
+              >
+                <span class="material-symbols-outlined"> visibility </span>
+              </button>
+            </div>
+
+            <label class="input-label" for="confirm-password">Confirm password</label>
+            <div class="input-group" data-field-group="confirm_password">
+              <span class="material-symbols-outlined input-icon"> lock </span>
+
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm_password"
+                aria-label="Confirm password"
+                minlength="8"
+                maxlength="20"
+                autocomplete="new-password"
+                placeholder="Confirm your password"
+                required
+              />
+
+              <button
+                class="toggle-password"
+                type="button"
+                data-target="confirm-password"
+              >
+                <span class="material-symbols-outlined"> visibility </span>
+              </button>
+            </div>
+
+            <p id="register-status" class="register-status" role="status" aria-live="polite" hidden></p>
+            <button class="primary-btn" type="submit">Create Account</button>
+          </form>
+
+          <div class="footer">
+            <p class="signup-link">
+              Already have an account?
+              <a href="login.html">Sign in</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/JS/register.js?v=20261029-v3"></script>
+      <script src="../assets/JS/vendor/gsap.min.js?v=3.15.0"></script>
+      <script src="../assets/JS/vendor/ScrollTrigger.min.js?v=3.12.5"></script>
+    <script src="../assets/JS/gsap-animations.js?v=20261105-v2"></script>
+</body>
+</html>
