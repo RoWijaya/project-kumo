@@ -3,44 +3,79 @@
   <head>
     <script src="../assets/JS/theme.js?v=20261029-v3"></script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="../assets/icons/kumo_fluffy_cloud_icon.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/icons/kumo_fluffy_cloud_icon.svg"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=block" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=block"
+    />
     <script src="../assets/JS/csrf-forms.js?v=20261029-v3" defer></script>
     <title>Kumo - Register</title>
 
-    
-    
-    
     <link rel="stylesheet" href="../assets/css/auth.css?v=20261029-v4" />
-    <link rel="stylesheet" href="../assets/css/kumo-background.css?v=20261029-v3" />
-
-
-    
+    <link
+      rel="stylesheet"
+      href="../assets/css/kumo-background.css?v=20261029-v3"
+    />
   </head>
 
   <body>
     <a href="../index.html" class="kumo-btn" aria-label="Back to Kumo home">
-      <img src="../assets/icons/Kumo.svg" alt="Kumo" />
+      <img src="assets/icons/kumo_fluffy_cloud_symbol.svg" alt="Kumo" />
     </a>
 
     <nav class="auth-nav" aria-label="Account navigation">
-      <a href="register.html" class="auth-nav-pill" aria-current="page">Sign Up</a>
+      <a href="register.html" class="auth-nav-pill" aria-current="page"
+        >Sign Up</a
+      >
       <a href="login.html" class="auth-nav-link">Login</a>
     </nav>
 
     <div class="container">
-      <div class="left-panel"><div class="auth-story"><p class="auth-story-kicker">Start with a little cloud</p><h2>Make a little room for what’s next.</h2><p>Bring your course notes, deadlines, and to-dos together. No need to have it all figured out yet.</p><div class="auth-story-notes"><div><strong>One calm space</strong><span>Notes, tasks, and ideas.</span></div><div><strong>At your own pace</strong><span>One small step at a time.</span></div></div><p class="auth-story-quote">“A little structure. More room to think.”</p></div></div>
+      <div class="left-panel">
+        <div class="auth-story">
+          <p class="auth-story-kicker">Start with a little cloud</p>
+          <h2>Make a little room for what’s next.</h2>
+          <p>
+            Bring your course notes, deadlines, and to-dos together. No need to
+            have it all figured out yet.
+          </p>
+          <div class="auth-story-notes">
+            <div>
+              <strong>One calm space</strong
+              ><span>Notes, tasks, and ideas.</span>
+            </div>
+            <div>
+              <strong>At your own pace</strong
+              ><span>One small step at a time.</span>
+            </div>
+          </div>
+          <p class="auth-story-quote">
+            “A little structure. More room to think.”
+          </p>
+        </div>
+      </div>
 
       <div class="right-panel">
         <div class="auth-card">
-          <a href="../index.html" class="brand" aria-label="Kumo home"><img src="../assets/icons/Kumo.svg" alt="Kumo" /></a>
-<div class="title">
+          <a href="../index.html" class="brand" aria-label="Kumo home"
+            ><img src="../assets/icons/Kumo.svg" alt="Kumo"
+          /></a>
+          <div class="title">
             <h1>Create your account.</h1>
-            <p>Bring your notes, tasks, and plans together in one calm space.</p>
+            <p>
+              Bring your notes, tasks, and plans together in one calm space.
+            </p>
           </div>
 
           <div
@@ -75,7 +110,9 @@
 
             <label class="input-label" for="username">Username</label>
             <div class="input-group" data-field-group="username">
-              <span class="material-symbols-outlined input-icon">alternate_email</span>
+              <span class="material-symbols-outlined input-icon"
+                >alternate_email</span
+              >
               <input
                 type="text"
                 id="username"
@@ -132,7 +169,9 @@
               </button>
             </div>
 
-            <label class="input-label" for="confirm-password">Confirm password</label>
+            <label class="input-label" for="confirm-password"
+              >Confirm password</label
+            >
             <div class="input-group" data-field-group="confirm_password">
               <span class="material-symbols-outlined input-icon"> lock </span>
 
@@ -157,7 +196,13 @@
               </button>
             </div>
 
-            <p id="register-status" class="register-status" role="status" aria-live="polite" hidden></p>
+            <p
+              id="register-status"
+              class="register-status"
+              role="status"
+              aria-live="polite"
+              hidden
+            ></p>
             <button class="primary-btn" type="submit">Create Account</button>
           </form>
 
@@ -172,8 +217,8 @@
     </div>
 
     <script src="../assets/JS/register.js?v=20261029-v3"></script>
-      <script src="../assets/JS/vendor/gsap.min.js?v=3.15.0"></script>
-      <script src="../assets/JS/vendor/ScrollTrigger.min.js?v=3.12.5"></script>
+    <script src="../assets/JS/vendor/gsap.min.js?v=3.15.0"></script>
+    <script src="../assets/JS/vendor/ScrollTrigger.min.js?v=3.12.5"></script>
     <script src="../assets/JS/gsap-animations.js?v=20261105-v2"></script>
-</body>
+  </body>
 </html>

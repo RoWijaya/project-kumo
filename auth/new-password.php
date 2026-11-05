@@ -29,10 +29,10 @@ $messages = [
 
 </head>
 <body>
-  <a href="../index.html" class="kumo-btn" aria-label="Back to Kumo home"><img src="../assets/icons/Kumo.svg" alt="Kumo"></a>
+  <a href="../index.html" class="kumo-btn" aria-label="Back to Kumo home"><img src="assets/icons/kumo_fluffy_cloud_symbol.svg" alt="Kumo"/></a>
   <nav class="auth-nav" aria-label="Account navigation"><a href="register.html" class="auth-nav-link">Sign Up</a><a href="login.html" class="auth-nav-pill">Login</a></nav>
   <div class="container"><div class="left-panel"><div class="auth-story"><p class="auth-story-kicker">A fresh start</p><h2>Let&rsquo;s get you back.</h2><p>Choose a strong new password and get back to the work you were keeping safe in Kumo.</p><div class="auth-story-notes"><div><strong>Secure by design</strong><span>Use a password only you know.</span></div></div><p class="auth-story-quote">Your ideas will be right where you left them.</p></div></div><div class="right-panel"><div class="auth-card">
-    <a href="../index.html" class="brand" aria-label="Kumo home"><img src="../assets/icons/Kumo.svg" alt="Kumo" /></a>
+    <a href="../index.html" class="brand" aria-label="Kumo home"><img src="../assets/icons/kumo_fluffy_cloud_symbol.svg" alt="Kumo" /></a>
     <div class="icon-circle"><span class="material-symbols-outlined">lock_reset</span></div>
     <div class="title"><h1>Choose a new password.</h1><p>Use a password you have not used before.</p></div>
     <?php if (!$validToken): ?>
