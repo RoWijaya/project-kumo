@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script src="../assets/JS/theme.js?v=20261029-v3"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=block"
+    />
+    <script src="../assets/JS/csrf-forms.js?v=20261029-v3" defer></script>
+    <title>Kumo — Verify your email</title>
+    <link rel="stylesheet" href="../assets/css/auth.css?v=20261029-v4" />
+    <link
+      rel="stylesheet"
+      href="../assets/css/kumo-background.css?v=20261029-v3"
+    />
+  </head>
+  <body>
+    <a href="../index.html" class="kumo-btn" aria-label="Back to Kumo home"
+      ><img src="../assets/icons/kumo_fluffy_cloud_symbol.svg" alt="Kumo"
+    /></a>
+    <div class="container">
+      <div class="left-panel">
+        <div class="auth-story">
+          <p class="auth-story-kicker">Almost there</p>
+          <h2>Make sure your cloud has a home.</h2>
+          <p>
+            Verify your email to finish setting up your Kumo account and keep
+            your work connected to you.
+          </p>
+          <div class="auth-story-notes">
+            <div>
+              <strong>One quick step</strong
+              ><span>Then you’re ready to begin.</span>
+            </div>
+          </div>
+          <p class="auth-story-quote">“Your clouds are waiting.”</p>
+        </div>
+      </div>
+      <div class="right-panel">
+        <main class="auth-card">
+          <a href="../index.html" class="brand" aria-label="Kumo home"
+            ><img src="../assets/icons/kumo_fluffy_cloud_symbol.svg" alt="Kumo"
+          /></a>
+          <div class="title">
+            <h1>Verify your email.</h1>
+            <p>One quick step to activate your Kumo account.</p>
+          </div>
+          <div
+            id="verify-message"
+            class="verify-message"
+            role="status"
+            hidden
+          ></div>
+          <p class="verify-copy">
+            Enter the email address you registered with. We'll send a fresh
+            verification link if your account needs one. Links expire after 30
+            minutes.
+          </p>
+          <form
+            class="auth-form verify-form"
+            action="../assets/backend/resend_verification.php"
+            method="post"
+          >
+            <div class="input-group">
+              <span class="material-symbols-outlined input-icon">mail</span
+              ><input
+                type="email"
+                name="email"
+                aria-label="Email address"
+                autocomplete="email"
+                placeholder="Enter your email address"
+                maxlength="254"
+                required
+              />
+            </div>
+            <div class="verify-actions">
+              <button class="primary-btn" type="submit">
+                Send verification link
+              </button>
+              <p class="verify-small">
+                Already verified? <a href="login.html">Sign in</a>
+              </p>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+    <script>
+      (() => {
+        const p = new URLSearchParams(location.search),
+          box = document.getElementById("verify-message");
+        let message = "";
+        let error = false;
+        if (p.has("sent"))
+          message =
+            "Your account was created. Check your inbox (and spam folder) for the verification link.";
+        else if (p.has("resent"))
+          message =
+            "If this address belongs to an unverified Kumo account, a new verification link has been sent. Check your inbox and spam folder.";
+        else if (p.get("error") === "send_failed") {
+          message =
+            "Your account may have been created, but Kumo could not send the email. Check the SMTP settings, then request another link below.";
+          error = true;
+        } else if (p.get("error") === "invalid_token") {
+          message =
+            "That verification link is invalid, expired, or already used. Request a new one below.";
+          error = true;
+        } else if (p.get("error") === "email_unverified") {
+          message =
+            "Your account needs email verification before you can continue. Enter your email below to request a link.";
+          error = true;
+        } else if (p.get("error") === "csrf") {
+          message =
+            "Your secure form session expired. Refresh this page and try again.";
+          error = true;
+        } else if (p.get("error") === "server") {
+          message =
+            "Kumo could not complete verification. Please try again or request a new link.";
+          error = true;
+        }
+        if (message) {
+          box.textContent = message;
+          box.hidden = false;
+          box.classList.toggle("error", error);
+        }
+      })();
+    </script>
+    <script src="../assets/JS/vendor/gsap.min.js?v=3.15.0"></script>
+    <script src="../assets/JS/vendor/ScrollTrigger.min.js?v=3.12.5"></script>
+    <script src="../assets/JS/gsap-animations.js?v=20261105-v2"></script>
+  </body>
+</html>

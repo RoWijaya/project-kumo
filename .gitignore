@@ -1,8 +1,6 @@
-assets/backend/db.php
-
+assets/backend/config.local.php
+storage/
 *.log
-
 .vscode/
-
 .DS_Store
 Thumbs.db

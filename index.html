@@ -1,49 +1,260 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kumo — A peaceful home for your ideas</title>
-    <link rel="stylesheet" href="Assets/Css/landing.css" />
 
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <script src="assets/JS/theme.js?v=20261029-v3"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#edf2ee" />
+  <link rel="icon" type="image/svg+xml" href="assets/icons/kumo_fluffy_cloud_icon.svg" />
+  <title>Kumo — A peaceful home for your ideas</title>
+  <link rel="stylesheet" href="assets/css/landing.css?v=20261029-v4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+</head>
 
-  <body>
-    <div class="kumo-hero">
-      <!-- Top Navigation -->
-      <header class="site-nav">
-        <a class="nav-logo">
-          <img src="Assets/icons/Kumo.svg" alt="Kumo Logo" />
-        </a>
+<body>
+  <!-- Ambient Parallax Backdrop Canvas -->
+  <div class="landing-ambient-canvas" aria-hidden="true">
+    <div class="kumo-ambient-glow hero-glow-orb"></div>
+    <div class="kumo-ambient-glow feature-glow-orb"></div>
+    <svg class="kumo-parallax-cloud cloud-layer-bg-1" viewBox="0 0 96 68" fill="none">
+      <path
+        d="M21.56 67.08C15.59 67.08 10.5 65 6.3 60.83C2.1 56.66 0 51.59 0 45.6C0 40.11 1.88 35.24 5.63 30.98C9.38 26.73 14.05 24.44 19.63 24.13C20.7 17.15 23.91 11.38 29.26 6.83C34.6 2.28 40.82 0 47.92 0C55.91 0 62.7 2.79 68.29 8.38C73.87 13.97 76.67 20.76 76.67 28.75V33.54H79.62C84.21 33.69 88.05 35.37 91.17 38.6C94.28 41.82 95.83 45.73 95.83 50.31C95.83 55.01 94.21 58.98 90.97 62.22C87.73 65.46 83.76 67.08 79.06 67.08H21.56Z"
+        fill="currentColor" />
+    </svg>
+    <svg class="kumo-parallax-cloud cloud-layer-bg-2" viewBox="0 0 96 68" fill="none">
+      <path
+        d="M21.56 67.08C15.59 67.08 10.5 65 6.3 60.83C2.1 56.66 0 51.59 0 45.6C0 40.11 1.88 35.24 5.63 30.98C9.38 26.73 14.05 24.44 19.63 24.13C20.7 17.15 23.91 11.38 29.26 6.83C34.6 2.28 40.82 0 47.92 0C55.91 0 62.7 2.79 68.29 8.38C73.87 13.97 76.67 20.76 76.67 28.75V33.54H79.62C84.21 33.69 88.05 35.37 91.17 38.6C94.28 41.82 95.83 45.73 95.83 50.31C95.83 55.01 94.21 58.98 90.97 62.22C87.73 65.46 83.76 67.08 79.06 67.08H21.56Z"
+        fill="currentColor" />
+    </svg>
+    <svg class="kumo-parallax-cloud cloud-layer-bg-3" viewBox="0 0 96 68" fill="none">
+      <path
+        d="M21.56 67.08C15.59 67.08 10.5 65 6.3 60.83C2.1 56.66 0 51.59 0 45.6C0 40.11 1.88 35.24 5.63 30.98C9.38 26.73 14.05 24.44 19.63 24.13C20.7 17.15 23.91 11.38 29.26 6.83C34.6 2.28 40.82 0 47.92 0C55.91 0 62.7 2.79 68.29 8.38C73.87 13.97 76.67 20.76 76.67 28.75V33.54H79.62C84.21 33.69 88.05 35.37 91.17 38.6C94.28 41.82 95.83 45.73 95.83 50.31C95.83 55.01 94.21 58.98 90.97 62.22C87.73 65.46 83.76 67.08 79.06 67.08H21.56Z"
+        fill="currentColor" />
+    </svg>
+  </div>
 
-        <nav class="nav-actions">
-          <a href="auth/register.html" class="nav-link">Sign Up</a>
-          <a href="auth/login.html" class="nav-pill">Login</a>
-        </nav>
-      </header>
+  <header class="site-nav">
+    <a class="nav-logo" href="index.html" aria-label="Kumo home">
+      <img src="assets/icons/kumo_fluffy_cloud_symbol.svg" alt="" class="nav-logo-icon" aria-hidden="true" />
+    </a>
+    <nav class="nav-actions" aria-label="Main navigation">
+      <a class="nav-link" href="#how-it-works">How it works</a>
+      <a class="nav-link" href="auth/login.html">Log in</a>
+      <a href="auth/register.html" class="nav-pill">Get started <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
 
-      <main class="hero-content">
-        <div class="hero-text-wrapper">
-          <div class="eyebrow">凪 — Calm, considered, complete</div>
-
-          <h1 class="headline">A peaceful home<br />for your ideas.</h1>
-
-          <p class="subheadline">
-            Transform scattered thoughts into organized knowledge. Kumo brings
-            your notes, tasks, and schedule into one beautifully
-            distraction-free space.
-          </p>
-
-          <a href="auth/register.html" class="cta-button">Get Started</a>
+  <main>
+    <section class="hero-section">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> A quieter way to get things done</p>
+        <h1>Your clouds<br /><em>are waiting.</em></h1>
+        <p class="subheadline">A peaceful home for your ideas. Keep class notes, tasks, and the things you want to
+          remember together—without making your day feel busier.</p>
+        <div class="hero-actions">
+          <a href="auth/register.html" class="cta-button">Make room for your ideas <span aria-hidden="true">→</span></a>
+          <a href="#how-it-works" class="secondary-link">Take a look <span aria-hidden="true">↓</span></a>
         </div>
-      </main>
-    </div>
-  </body>
+        <div class="hero-note"><span aria-hidden="true">✳</span> Your space, your pace. Always.</div>
+      </div>
+
+      <div class="product-preview" aria-label="Illustration of the Kumo workspace">
+        <!-- Floating depth layers with differential scroll scrub -->
+        <div class="hero-float-pill pill-clouds" aria-hidden="true">
+          <span class="pill-icon">☁</span>
+          <span>4 Clouds organized</span>
+        </div>
+        <div class="hero-float-pill pill-notes" aria-hidden="true">
+          <span class="pill-icon">✎</span>
+          <span>Lecture notes updated</span>
+        </div>
+        <div class="hero-float-pill pill-zen" aria-hidden="true">
+          <span class="pill-dot"></span>
+          <span>Focus pace</span>
+        </div>
+
+        <div class="preview-window">
+          <div class="preview-topbar"><span class="window-dots"><i></i><i></i><i></i></span><span
+              class="preview-wordmark">kumo <span>your sky</span></span><span class="preview-profile">K</span></div>
+          <div class="preview-body">
+            <aside class="preview-sidebar">
+              <div class="preview-sidebar-title">YOUR SKY</div>
+              <div class="preview-nav active"><span>⌂</span> My Sky</div>
+              <div class="preview-nav"><span>☁</span> Data Structures</div>
+              <div class="preview-nav nested"><span>↳</span> Week 04</div>
+              <div class="preview-nav"><span>☁</span> Personal</div>
+              <div class="preview-sidebar-rule"></div>
+              <div class="preview-sidebar-title">COMMUNITY</div>
+              <div class="preview-nav muted"><span>＋</span> Join an Atmosphere</div>
+            </aside>
+            <div class="preview-content">
+              <div class="preview-greeting">
+                <div><span class="preview-kicker">MONDAY, OCTOBER 19</span>
+                  <h2>A little progress<br />goes a long way.</h2>
+                  <p>Your clouds are waiting. Pick up where you left off.</p>
+                </div><span class="preview-weather" aria-hidden="true">☁</span>
+              </div>
+              <div class="preview-stats">
+                <div><span>Clouds</span><strong>04</strong></div>
+                <div><span>Open tasks</span><strong>03</strong></div>
+                <div><span>Notes saved</span><strong>12</strong></div>
+              </div>
+              <div class="preview-lower">
+                <div class="preview-panel">
+                  <div class="preview-panel-heading"><span>Coming up</span><span>•••</span></div>
+                  <div class="preview-task"><i></i>
+                    <div><strong>Review lecture notes</strong><small>Data Structures</small></div><time>Today</time>
+                  </div>
+                  <div class="preview-task"><i></i>
+                    <div><strong>Finish practice questions</strong><small>Discrete Mathematics</small></div>
+                    <time>Wed</time>
+                  </div>
+                </div>
+                <div class="preview-panel preview-cloud-panel">
+                  <div class="preview-panel-heading"><span>Recent spaces</span><span>↗</span></div>
+                  <div class="preview-cloud"><span>☁</span>
+                    <div><strong>Data Structures</strong><small>Updated just now</small></div>
+                  </div>
+                  <div class="preview-cloud"><span>☁</span>
+                    <div><strong>Personal</strong><small>Updated yesterday</small></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="preview-caption"><span class="caption-mark">✳</span><span>A little structure. A little breathing
+            room.</span></div>
+      </div>
+    </section>
+
+    <section class="intro-strip" id="how-it-works"><span class="strip-label">A space for the things on your mind</span>
+      <p>Not another thing to keep up with.<br /><strong>A place to put things down.</strong></p><span
+        class="strip-mark" aria-hidden="true">↘</span>
+    </section>
+
+    <section class="feature-section" id="how-it-works-showcase">
+      <div class="section-intro">
+        <p class="eyebrow">MADE FOR YOUR EVERYDAY</p>
+        <h2>Everything has<br /><em>a place to land.</em></h2>
+        <p>Keep the pieces of your day connected, while leaving enough room to think.</p>
+        <div class="story-progress" aria-hidden="true">
+          <span class="story-dot active" data-step="0"></span>
+          <span class="story-dot" data-step="1"></span>
+          <span class="story-dot" data-step="2"></span>
+          <span class="story-step-text">Depth Layer 01 / 03</span>
+        </div>
+      </div>
+
+      <div class="feature-stage" aria-hidden="true">
+        <!-- Story Card 1: Clouds -->
+        <div class="story-card card-1 active">
+          <div class="story-card-top">
+            <span class="story-chip cloud-chip">☁ SPATIAL STRUCTURE</span>
+            <span class="story-num">01</span>
+          </div>
+          <h3>Clouds for every dimension</h3>
+          <p>From university lectures to personal creative projects, partition your life into peaceful skies.</p>
+          <div class="story-visual visual-clouds">
+            <div class="story-cloud-item active-cloud"><span>☁</span>
+              <div><strong>Data Structures</strong><small>3 notes · 2 tasks</small></div><em>Active</em>
+            </div>
+            <div class="story-cloud-item"><span>☁</span>
+              <div><strong>Design Systems</strong><small>8 notes · 1 task</small></div><em>Synced</em>
+            </div>
+            <div class="story-cloud-item"><span>☁</span>
+              <div><strong>Personal Sky</strong><small>14 notes</small></div><em>Quiet</em>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 2: Notes -->
+        <div class="story-card card-2">
+          <div class="story-card-top">
+            <span class="story-chip note-chip">✎ DEEP NOTES</span>
+            <span class="story-num">02</span>
+          </div>
+          <h3>Words that stay with you</h3>
+          <p>Capture thoughts in distraction-free clarity. Clean typography that lets ideas breathe.</p>
+          <div class="story-visual visual-notes">
+            <div class="story-note-preview">
+              <span class="note-kicker">DATA STRUCTURES / WEEK 04</span>
+              <h4>Binary Search Trees &amp; Balance</h4>
+              <p>Tree rotations preserve in-order invariant while keeping height bounded at O(log n)...</p>
+              <div class="note-tags"><span>#lecture</span><span>#midterm-prep</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story Card 3: Tasks -->
+        <div class="story-card card-3">
+          <div class="story-card-top">
+            <span class="story-chip task-chip">✓ GROUNDED TASKS</span>
+            <span class="story-num">03</span>
+          </div>
+          <h3>Context, not just a checklist</h3>
+          <p>Tasks live directly alongside the Cloud they belong to, never lost in a void.</p>
+          <div class="story-visual visual-tasks">
+            <div class="story-task-item done"><i>✓</i><span>Problem set 3 complete</span><small>Data Structures</small>
+            </div>
+            <div class="story-task-item"><i>○</i><span>Review AVL rotation cases</span><small>Today</small></div>
+            <div class="story-task-item"><i>○</i><span>Sketch wireframe components</span><small>Tomorrow</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-list">
+        <article class="feature-row">
+          <div class="feature-number">01</div>
+          <div class="feature-icon cloud-feature" aria-hidden="true">☁</div>
+          <div class="feature-copy">
+            <h3>Clouds for every part of life</h3>
+            <p>Create spaces for classes, projects, and personal plans. Nest things into a structure that makes sense to
+              you.</p>
+          </div><span class="feature-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="feature-row">
+          <div class="feature-number">02</div>
+          <div class="feature-icon note-feature" aria-hidden="true">✎</div>
+          <div class="feature-copy">
+            <h3>Notes that stay close</h3>
+            <p>Keep the details, quick thoughts, and study notes you want to come back to, right where they belong.</p>
+          </div><span class="feature-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="feature-row">
+          <div class="feature-number">03</div>
+          <div class="feature-icon task-feature" aria-hidden="true">✓</div>
+          <div class="feature-copy">
+            <h3>Tasks with a little more context</h3>
+            <p>Track what needs doing and keep upcoming work connected to the Cloud it belongs to.</p>
+          </div><span class="feature-arrow" aria-hidden="true">↗</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="closing-ambient-glow" aria-hidden="true"></div>
+      <div>
+        <p class="eyebrow">START WITH ONE CLOUD</p>
+        <h2>Make a little space<br />for what matters.</h2>
+        <p>Build your own corner of Kumo, one idea at a time.</p>
+      </div>
+      <a href="auth/register.html" class="cta-button">Create your account <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="footer-logo" href="index.html"><img
+        src="assets/icons/kumo_fluffy_cloud_symbol.svg" alt="" class="footer-logo-icon" aria-hidden="true" /><img
+        src="assets/icons/Kumo.svg" alt="Kumo" /></a><span>A peaceful home for your ideas.</span>
+    <div><a href="auth/login.html">Log in</a><a href="auth/register.html">Sign up</a></div><small>© Kumo</small>
+  </footer>
+  <script src="assets/JS/vendor/gsap.min.js?v=3.15.0"></script>
+  <script src="assets/JS/vendor/ScrollTrigger.min.js?v=3.12.5"></script>
+  <script src="assets/JS/gsap-animations.js?v=20261105-v2"></script>
+</body>
+
 </html>
