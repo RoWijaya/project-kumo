@@ -15,6 +15,8 @@ Kumo is deployed and available at:
 
 **https://kumo.ct.ws**
 
+Though there might still be some bugs and errors that needs fixing.
+
 You can access the application directly through your browser without running a local XAMPP environment.
 
 ## 💻 Run Kumo Locally with XAMPP
